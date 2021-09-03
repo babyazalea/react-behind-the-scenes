@@ -23,3 +23,6 @@
   // true
   ~~~
     위의 코드는 앞에서 언급한 원시 타입 데이터와 참조 타입 데이터의 차이점을 보여준다. 이런 Javascript의 특성을 이용해 React에서는 useCallback hook을 제공한다. useCallback은 참조 타입인 함수(Javascript에서는 함수를 객체Object로 취급한다)로 선언된 변수를 useCallback hook을 통해 해당 함수가  포함된 Component가 최초로 렌더링 될 때 React의 특정 storage에 해당 함수를 저장한다. useCallback hook은 두 번째 인자로 배열Array를 받으며, 해당 배열에 넣은 인자의 값이 변화할 때 해당 함수를 re-evaluate 하도록 만들 수 있다.
+<br/>
+
+* React.memo()를 '컴포넌트 전체'를 React의 특정 부분에 저장하는 기능을 한다면, useMemo hook은 state, props, context를 비롯하여 변수, 함수 등 리액트 어플리케이션 안의 특정 데이터 타입 '하나'를 콕 집어서 저장하는 기능을 한다. 물론 useMemo hook 또한 두 번째 인자를 이용하여 re-evaluate 시기를 조정할 수 있다.
